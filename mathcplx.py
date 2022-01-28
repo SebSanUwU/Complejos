@@ -40,9 +40,12 @@ def polar_cartcplx(a):
 #De cartesiano a polar
 def cart_polarcplx(a):
 	p=modcplx(a)
-	print(p)
-	theta=math.atan(a[1]/a[0])
-	#condicional
+	if a[0]<0 and a[1]>0:
+		theta=math.atan(a[1]/a[0])+math.pi
+	if a[0]<0 and a[1]<1:
+		theta=math.atan(a[1]/a[0])+math.pi
+	if a[0]>0 and a[1]<0:
+		theta=math.atan(a[1]/a[0])+2*math.pi
 	return (p,theta)
 
 #prettyPrinting(sumacplx((3,-1),(1,4)))
